@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Navbar Mobile Top-Down</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+            .service-card {
+        transition: transform 0.3s;
+        height: 100%;
+      }
+      .service-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      }
+      .service-icon {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+        color: #0d6efd;
+      }
+      a {
+        text-decoration: none;
+      }
+      .text-footer {
+        font-weight: bolder;
+        color: #f2f2f2;
+      }
+      .text-footer:hover {
+        color: var(--chrono-orange);
+      }
+      .section-title {
+        font-weight: 700;
+        color: var(--chrono-blue);
+        margin-bottom: 30px;
+        position: relative;
+        padding-bottom: 15px;
+      }
+
+      .section-title:after {
+        content: "";
+        position: absolute;
+        width: 80px;
+        height: 3px;
+        background-color: var(--chrono-orange);
+        bottom: 0;
+        left: 0;
+      }
+      .feature-icon {
+        color: var(--chrono-orange);
+        font-size: 1.5rem;
+        margin-right: 10px;
+      }
+      :root {
+        /* --chrono-blue: #0033a0; */
+        --chrono-blue: #0c5b89;
+        --chrono-orange: #f48005;
+        --chrono-red: #e51805;
+        /* --chrono-orange: #ff6600; */
+        --chrono-light-blue: #e6ecf5;
+      }
+      .bg-chrono-blue {
+        background-color: var(--chrono-blue);
+      }
+      .bg-chrono-light-blue {
+        background-color: var(--chrono-light-blue);
+      }
+      .text-chrono-blue {
+        color: var(--chrono-blue);
+      }
+      .text-chrono-orange {
+        color: var(--chrono-orange);
+      }
+      .btn-chrono-orange {
+        background-color: var(--chrono-orange);
+        color: white;
+        font-weight: 600;
+      }
+      .btn-chrono-orange:hover {
+        background-color: #e65c00;
+        color: white;
+      }
+      .btn-chrono-outline {
+        border: 2px solid var(--chrono-blue);
+        color: var(--chrono-blue);
+        font-weight: 600;
+      }
+      .btn-chrono-outline:hover {
+        background-color: var(--chrono-blue);
+        color: white;
+      }
+      .nav-tabs .nav-link {
+        color: var(--chrono-blue);
+        font-weight: 600;
+        border: none;
+        padding: 12px 20px;
+      }
+      .nav-tabs .nav-link.active {
+        color: white;
+        background-color: var(--chrono-blue);
+        border: none;
+      }
+      /* Variables */
+      :root {
+        --primary: #2c3e50;
+        --secondary: #e74c3c;
+        --light: #ecf0f1;
+        --dark: #34495e;
+        --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      }
+
+      /* Base */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Montserrat", sans-serif;
+        padding-top: 80px;
+        background-color: #f9f9f9;
+      }
+
+      .nav-link {
+        color: var(--dark);
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 16px;
+        padding: 10px 0;
+        position: relative;
+        transition: var(--transition);
+      }
+
+      .nav-link:hover {
+        color: var(--secondary);
+      }
+
+      .nav-link::before {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 3px;
+        bottom: 0;
+        left: 0;
+        background-color: var(--secondary);
+        transition: var(--transition);
+        border-radius: 3px;
+      }
+
+      .nav-link:hover::before {
+        width: 100%;
+      }
+
+      /* Bouton */
+      .nav-btn {
+        background: var(--chrono-orange);
+        color: white;
+        border: none;
+        padding: 10px 25px;
+        border-radius: 30px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: var(--transition);
+        box-shadow: 0 3px 10px rgba(231, 76, 60, 0.3);
+      }
+
+      .nav-btn:hover {
+        background: #e51805;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(231, 76, 60, 0.4);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav
+      class="navbar navbar-expand-lg navbar-light bg-light fixed-top"
+      style="border-bottom: 3px solid#2c5b98"
+    >
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <img
+            src="logo160.png"
+            alt=""
+            style="height: 100%; max-height: 70px"
+          />
+        </a>
+        <button
+          class="navbar-toggler d-lg-none"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#collapsibleNavId"
+          aria-controls="collapsibleNavId"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html"
+                >Accueil
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">A propos</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle active"
+                href="#"
+                id="dropdownId"
+                data-bs-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+                >Offres</a
+              >
+              <div class="dropdown-menu" aria-labelledby="dropdownId">
+                <a class="dropdown-item" href="particuliers.html">Particuliers</a>
+                <a class="dropdown-item" href="pro.html">Professionnels</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Suivie</a>
+            </li>
+            <li class="nav-item">
+              <a class=" nav-btn btn" href="#">Commander maintenant</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+      <div class="container py-5">
+      <h1 class="text-center mb-5">
+        Nos Services de Livraison pour Entreprise
+      </h1>
+
+      <div class="row g-5">
+        <!-- Abonnement Pro/Forfait Entreprise -->
+        <div class="col-md-6 col-lg-6">
+          <div class="card service-card p-4 text-center">
+            <i class="fas fa-building service-icon"></i>
+            <h3>Abonnement Pro/Forfait Entreprise</h3>
+            <p>
+              Solutions sur mesure pour les professionnels avec tarifs
+              préférentiels.
+            </p>
+          </div>
+        </div>
+
+        <!-- Livraison Interentreprise -->
+        <div class="col-md-6 col-lg-6">
+          <div class="card service-card p-4 text-center">
+            <i class="fas fa-truck-arrow-right service-icon"></i>
+            <h3>Livraison Interentreprise</h3>
+            <p>
+              Transport sécurisé de marchandises entre vos différents sites.
+            </p>
+          </div>
+        </div>
+
+        <!-- Livraison Confidentielle -->
+        <div class="col-md-6 col-lg-6">
+          <div class="card service-card p-4 text-center">
+            <i class="fas fa-lock service-icon"></i>
+            <h3>Livraison Confidentielle</h3>
+            <p>Envois discrets avec protocole de sécurité renforcé.</p>
+          </div>
+        </div>
+
+        <!-- Livraison Multidestination -->
+        <div class="col-md-6 col-lg-6">
+          <div class="card service-card p-4 text-center">
+            <i class="fas fa-map-location-dot service-icon"></i>
+            <h3>Livraison Multidestination</h3>
+            <p>
+              Distribution d'un même envoi vers plusieurs adresses différentes.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
