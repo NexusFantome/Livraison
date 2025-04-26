@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Navbar Mobile Top-Down</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      a {
+        text-decoration: none;
+      }
+      .text-footer {
+        font-weight: bolder;
+        color: #f2f2f2;
+      }
+      .text-footer:hover {
+        color: var(--chrono-orange);
+      }
+      .section-title {
+        font-weight: 700;
+        color: var(--chrono-blue);
+        margin-bottom: 30px;
+        position: relative;
+        padding-bottom: 15px;
+      }
+
+      .section-title:after {
+        content: "";
+        position: absolute;
+        width: 80px;
+        height: 3px;
+        background-color: var(--chrono-orange);
+        bottom: 0;
+        left: 0;
+      }
+      .feature-icon {
+        color: var(--chrono-orange);
+        font-size: 1.5rem;
+        margin-right: 10px;
+      }
+      :root {
+        /* --chrono-blue: #0033a0; */
+        --chrono-blue: #0c5b89;
+        --chrono-orange: #f48005;
+        --chrono-red: #e51805;
+        /* --chrono-orange: #ff6600; */
+        --chrono-light-blue: #e6ecf5;
+      }
+      .bg-chrono-blue {
+        background-color: var(--chrono-blue);
+      }
+      .bg-chrono-light-blue {
+        background-color: var(--chrono-light-blue);
+      }
+      .text-chrono-blue {
+        color: var(--chrono-blue);
+      }
+      .text-chrono-orange {
+        color: var(--chrono-orange);
+      }
+      .btn-chrono-orange {
+        background-color: var(--chrono-orange);
+        color: white;
+        font-weight: 600;
+      }
+      .btn-chrono-orange:hover {
+        background-color: #e65c00;
+        color: white;
+      }
+      .btn-chrono-outline {
+        border: 2px solid var(--chrono-blue);
+        color: var(--chrono-blue);
+        font-weight: 600;
+      }
+      .btn-chrono-outline:hover {
+        background-color: var(--chrono-blue);
+        color: white;
+      }
+      .nav-tabs .nav-link {
+        color: var(--chrono-blue);
+        font-weight: 600;
+        border: none;
+        padding: 12px 20px;
+      }
+      .nav-tabs .nav-link.active {
+        color: white;
+        background-color: var(--chrono-blue);
+        border: none;
+      }
+      /* Variables */
+      :root {
+        --primary: #2c3e50;
+        --secondary: #e74c3c;
+        --light: #ecf0f1;
+        --dark: #34495e;
+        --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      }
+
+      /* Base */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Montserrat", sans-serif;
+        padding-top: 80px;
+        background-color: #f9f9f9;
+      }
+
+      .nav-link {
+        color: var(--dark);
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 16px;
+        padding: 10px 0;
+        position: relative;
+        transition: var(--transition);
+      }
+
+      .nav-link:hover {
+        color: var(--secondary);
+      }
+
+      .nav-link::before {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 3px;
+        bottom: 0;
+        left: 0;
+        background-color: var(--secondary);
+        transition: var(--transition);
+        border-radius: 3px;
+      }
+
+      .nav-link:hover::before {
+        width: 100%;
+      }
+
+      /* Bouton */
+      .nav-btn {
+        background: var(--chrono-orange);
+        color: white;
+        border: none;
+        padding: 10px 25px;
+        border-radius: 30px;
+        font-weight: 600;
+        cursor: pointer;
+        transition: var(--transition);
+        box-shadow: 0 3px 10px rgba(231, 76, 60, 0.3);
+      }
+
+      .nav-btn:hover {
+        background: #e51805;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(231, 76, 60, 0.4);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav
+      class="navbar navbar-expand-lg navbar-light bg-light fixed-top"
+      style="border-bottom: 3px solid#2c5b98"
+    >
+      <div class="container">
+        <a class="navbar-brand" href="#">
+          <img
+            src="logo160.png"
+            alt=""
+            style="height: 100%; max-height: 70px"
+          />
+        </a>
+        <button
+          class="navbar-toggler d-lg-none"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#collapsibleNavId"
+          aria-controls="collapsibleNavId"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsibleNavId">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html"
+                >Accueil
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="about.html">A propos</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                id="dropdownId"
+                data-bs-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+                >Offres</a
+              >
+              <div class="dropdown-menu" aria-labelledby="dropdownId">
+                <a class="dropdown-item" href="particuliers.html">Particuliers</a>
+                <a class="dropdown-item" href="pro.html">Professionnels</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Suivie</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-btn btn" href="#">Commander maintenant</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+     <section
+      id="hero"
+      class="hero section"
+      style="margin-top: 50px; margin-bottom: 50px"
+    >
+      <div class="container">
+        <div class="row gy-4">
+          <div
+            class="col-lg-6 order-lg-last hero-img"
+            data-aos="zoom-out"
+            data-aos-delay="100"
+          >
+            <img
+              src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+              class="img-fluid animated rounded"
+              alt=""
+            />
+          </div>
+          <div
+            class="col-lg-6 d-flex flex-column justify-content-center text-center text-md-start"
+            data-aos="fade-in"
+          >
+            <h1>A propos de LagoExpress</h1>
+            <p>
+              Leader national de la livraison express de colis jusqu’à 50 kg,
+              LagoExpress s’impose comme un acteur incontournable de la
+              logistique moderne en Côte d’Ivoire. Grâce à un réseau étendu et
+              une flotte de véhicules adaptés, l’entreprise assure
+              quotidiennement l’acheminement rapide, sécurisé et fiable de
+              milliers de colis à destination des entreprises, des institutions
+              et des particuliers, aussi bien dans les grandes villes que dans
+              les zones rurales.
+            </p>
+            <p>
+              Forte de son expertise et de son engagement envers la satisfaction
+              client, LagoExpress propose des solutions sur mesure, allant du
+              service standard au service premium avec suivi en temps réel. Son
+              ouverture à l’international lui permet également d’assurer des
+              expéditions vers l’étranger, facilitant ainsi les échanges
+              commerciaux et personnels à l’échelle mondiale. Choisir
+              LagoExpress, c’est opter pour l’efficacité, la ponctualité et la
+              confiance.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
