@@ -3,8 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Livraison Rapide Internationale</title>
-    <!-- Bootstrap 5 CSS -->
+    <title>LagoExpress -Livraison</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -16,971 +15,906 @@
     />
     <!-- Google Fonts -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&family=Roboto:wght@300;400;500;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
       rel="stylesheet"
     />
     <style>
+      a {
+        text-decoration: none;
+      }
+      .text-footer {
+        font-weight: bolder;
+        color: #f2f2f2;
+      }
+      .text-footer:hover {
+        color: var(--chrono-orange);
+      }
+      .section-title {
+        font-weight: 700;
+        color: var(--chrono-blue);
+        margin-bottom: 30px;
+        position: relative;
+        padding-bottom: 15px;
+      }
+
+      .section-title:after {
+        content: "";
+        position: absolute;
+        width: 80px;
+        height: 3px;
+        background-color: var(--chrono-orange);
+        bottom: 0;
+        left: 0;
+      }
+      .feature-icon {
+        color: var(--chrono-orange);
+        font-size: 1.5rem;
+        margin-right: 10px;
+      }
       :root {
-        --primary-color: #0066ff;
-        --secondary-color: #00ccff;
-        --dark-color: #0a0a2a;
-        --light-color: #f0f8ff;
-        --accent-color: #ff6600;
+        /* --chrono-blue: #0033a0; */
+        --chrono-blue: #0c5b89;
+        --chrono-orange: #f48005;
+        --chrono-red: #e51805;
+        /* --chrono-orange: #ff6600; */
+        --chrono-light-blue: #e6ecf5;
+      }
+      .bg-chrono-blue {
+        background-color: var(--chrono-blue);
+      }
+      .bg-chrono-light-blue {
+        background-color: var(--chrono-light-blue);
+      }
+      .text-chrono-blue {
+        color: var(--chrono-blue);
+      }
+      .text-chrono-orange {
+        color: var(--chrono-orange);
+      }
+      .btn-chrono-orange {
+        background-color: var(--chrono-orange);
+        color: white;
+        font-weight: 600;
+      }
+      .btn-chrono-orange:hover {
+        background-color: #e65c00;
+        color: white;
+      }
+      .btn-chrono-outline {
+        border: 2px solid var(--chrono-blue);
+        color: var(--chrono-blue);
+        font-weight: 600;
+      }
+      .btn-chrono-outline:hover {
+        background-color: var(--chrono-blue);
+        color: white;
+      }
+      .nav-tabs .nav-link {
+        color: var(--chrono-blue);
+        font-weight: 600;
+        border: none;
+        padding: 12px 20px;
+      }
+      .nav-tabs .nav-link.active {
+        color: white;
+        background-color: var(--chrono-blue);
+        border: none;
+      }
+      /* Variables */
+      :root {
+        --primary: #2c3e50;
+        --secondary: #e74c3c;
+        --light: #ecf0f1;
+        --dark: #34495e;
+        --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      }
+
+      /* Base */
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
       }
 
       body {
-        font-family: "Roboto", sans-serif;
-        background-color: var(--dark-color);
-        color: var(--light-color);
-        overflow-x: hidden;
+        font-family: "Montserrat", sans-serif;
+        padding-top: 80px;
+        background-color: #f9f9f9;
       }
 
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      h6 {
-        font-family: "Orbitron", sans-serif;
-        font-weight: 700;
-      }
-
+      /* Navbar */
       .navbar {
-        background-color: rgba(10, 10, 42, 0.9);
-        border-bottom: 1px solid var(--secondary-color);
+        background: white;
+        box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+        position: fixed;
+        width: 100%;
+        top: 0;
+        z-index: 1000;
+        transition: var(--transition);
       }
 
-      .navbar-brand {
-        font-family: "Orbitron", sans-serif;
+      .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+        height: 80px;
+      }
+
+      /* Logo */
+      .logo {
+        display: flex;
+        /* align-items: center; */
+        text-decoration: none;
+      }
+
+      .logo-icon {
+        color: var(--secondary);
+        font-size: 28px;
+        margin-right: 10px;
+      }
+
+      .logo-text {
+        color: var(--primary);
+        font-size: 22px;
         font-weight: 700;
-        font-size: 1.8rem;
-        color: var(--secondary-color) !important;
-        text-shadow: 0 0 10px rgba(0, 204, 255, 0.5);
+        letter-spacing: 1px;
+      }
+
+      /* Menu */
+      .nav-menu {
+        display: flex;
+        list-style: none;
+      }
+
+      .nav-item {
+        margin-left: 30px;
+        position: relative;
       }
 
       .nav-link {
-        color: var(--light-color) !important;
-        font-weight: 500;
-        margin: 0 10px;
+        color: var(--dark);
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 16px;
+        padding: 10px 0;
         position: relative;
+        transition: var(--transition);
       }
 
       .nav-link:hover {
-        color: var(--secondary-color) !important;
+        color: var(--secondary);
       }
 
-      .nav-link::after {
+      .nav-link::before {
         content: "";
         position: absolute;
         width: 0;
-        height: 2px;
-        background: var(--secondary-color);
+        height: 3px;
         bottom: 0;
         left: 0;
-        transition: width 0.3s;
+        background-color: var(--secondary);
+        transition: var(--transition);
+        border-radius: 3px;
       }
 
-      .nav-link:hover::after {
+      .nav-link:hover::before {
         width: 100%;
       }
 
-      .hero-section {
-        background: linear-gradient(135deg, var(--dark-color) 0%, #1a1a4a 100%);
-        padding: 120px 0;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .hero-section::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: url("https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80")
-          no-repeat center center/cover;
-        opacity: 0.15;
-        z-index: 0;
-      }
-
-      .hero-content {
-        position: relative;
-        z-index: 1;
-      }
-
-      .hero-title {
-        font-size: 3.5rem;
-        font-weight: 700;
-        margin-bottom: 20px;
-        background: linear-gradient(
-          to right,
-          var(--secondary-color),
-          var(--primary-color)
-        );
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        text-shadow: 0 0 20px rgba(0, 204, 255, 0.3);
-      }
-
-      .hero-subtitle {
-        font-size: 1.5rem;
-        margin-bottom: 30px;
-        opacity: 0.9;
-      }
-
-      .btn-primary {
-        background: linear-gradient(
-          45deg,
-          var(--primary-color),
-          var(--secondary-color)
-        );
+      /* Bouton */
+      .nav-btn {
+        background: var(--chrono-orange);
+        color: white;
         border: none;
+        padding: 10px 25px;
         border-radius: 30px;
-        padding: 12px 30px;
         font-weight: 600;
-        letter-spacing: 1px;
-        box-shadow: 0 5px 15px rgba(0, 102, 255, 0.4);
-        transition: all 0.3s;
+        cursor: pointer;
+        transition: var(--transition);
+        box-shadow: 0 3px 10px rgba(231, 76, 60, 0.3);
       }
 
-      .btn-primary:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 8px 20px rgba(0, 102, 255, 0.6);
+      .nav-btn:hover {
+        background: #e51805;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 15px rgba(231, 76, 60, 0.4);
       }
 
-      .btn-outline-light {
-        border-radius: 30px;
-        padding: 12px 30px;
-        font-weight: 600;
-        letter-spacing: 1px;
-        transition: all 0.3s;
+      /* Mobile Toggle */
+      .mobile-toggle {
+        display: none;
+        background: none;
+        border: none;
+        color: var(--primary);
+        font-size: 24px;
+        cursor: pointer;
       }
 
-      .btn-outline-light:hover {
-        background-color: rgba(255, 255, 255, 0.1);
+      /* Mobile Menu - Modifié pour descendre du haut */
+      @media (max-width: 992px) {
+        .nav-menu {
+          position: fixed;
+          top: -100vh; /* Changé de left à top */
+          left: 0;
+          width: 100%; /* Prend toute la largeur */
+          height: auto; /* Hauteur automatique */
+          background: white;
+          flex-direction: column;
+          align-items: center;
+          padding: 20px;
+          box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+          transition: var(--transition);
+          z-index: 999;
+          border-radius: 0 0 15px 15px;
+        }
+
+        .nav-menu.active {
+          top: 80px; /* S'arrête sous la navbar */
+          left: 0;
+        }
+
+        .nav-item {
+          margin: 15px 0;
+          width: 100%;
+          text-align: center;
+          animation: none; /* Retire l'animation initiale */
+        }
+
+        .nav-link {
+          padding: 15px 0;
+          display: block;
+          width: 100%;
+        }
+
+        .nav-link::before {
+          display: none;
+        }
+
+        .mobile-toggle {
+          display: block;
+        }
+
+        .nav-btn {
+          margin-top: 20px;
+          width: 80%;
+          text-align: center;
+        }
       }
 
-      .section-title {
-        font-size: 2.5rem;
-        margin-bottom: 50px;
-        position: relative;
-        display: inline-block;
-      }
-
-      .section-title::after {
-        content: "";
-        position: absolute;
-        width: 50%;
-        height: 4px;
-        background: linear-gradient(
-          to right,
-          var(--primary-color),
-          var(--secondary-color)
-        );
-        bottom: -10px;
+      /* Overlay */
+      .overlay {
+        position: fixed;
+        top: 80px;
         left: 0;
-        border-radius: 2px;
+        right: 0;
+        bottom: 0;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 998;
+        opacity: 0;
+        visibility: hidden;
+        transition: var(--transition);
       }
 
-      .feature-card {
-        background: rgba(255, 255, 255, 0.05);
-        border-radius: 15px;
-        padding: 30px;
-        margin-bottom: 30px;
-        transition: all 0.3s;
-        border: 1px solid rgba(0, 204, 255, 0.1);
-        backdrop-filter: blur(10px);
+      .overlay.active {
+        opacity: 1;
+        visibility: visible;
       }
 
-      .feature-card:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 15px 30px rgba(0, 102, 255, 0.2);
-        border: 1px solid rgba(0, 204, 255, 0.3);
+      /* Animation pour les items du menu mobile */
+      @keyframes slideDown {
+        from {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
       }
 
-      .feature-icon {
-        font-size: 2.5rem;
-        margin-bottom: 20px;
-        color: var(--secondary-color);
+      .nav-menu.active .nav-item {
+        animation: slideDown 0.4s ease forwards;
       }
 
-      .service-card {
-        background: rgba(255, 255, 255, 0.03);
-        border-radius: 15px;
-        padding: 30px;
-        margin-bottom: 30px;
-        transition: all 0.3s;
-        border: 1px solid rgba(0, 204, 255, 0.05);
-        height: 100%;
+      .nav-menu.active .nav-item:nth-child(1) {
+        animation-delay: 0.1s;
       }
-
-      .service-card:hover {
-        background: rgba(255, 255, 255, 0.07);
-        transform: translateY(-5px);
-        box-shadow: 0 10px 25px rgba(0, 102, 255, 0.1);
+      .nav-menu.active .nav-item:nth-child(2) {
+        animation-delay: 0.2s;
       }
-
-      .service-icon {
-        font-size: 3rem;
-        margin-bottom: 20px;
-        color: var(--secondary-color);
+      .nav-menu.active .nav-item:nth-child(3) {
+        animation-delay: 0.3s;
       }
-
-      .stats-section {
-        background: linear-gradient(
-          135deg,
-          var(--primary-color) 0%,
-          var(--secondary-color) 100%
-        );
-        padding: 80px 0;
-        position: relative;
-        overflow: hidden;
+      .nav-menu.active .nav-item:nth-child(4) {
+        animation-delay: 0.4s;
       }
-
-      .stat-item {
-        text-align: center;
-        padding: 20px;
+      .nav-menu.active .nav-item:nth-child(5) {
+        animation-delay: 0.5s;
       }
-
-      .stat-number {
-        font-size: 3rem;
-        font-weight: 700;
-        font-family: "Orbitron", sans-serif;
-        margin-bottom: 10px;
+      .suivre {
+        color: var(--chrono-orange);
+        background-color: #fff;
+        border-color: var(--chrono-orange);
       }
-
-      .stat-label {
+      .suivre:hover {
+        color: #fff;
+        background-color: var(--chrono-orange);
+        border-color: var(--chrono-red);
+      }
+      .expedie {
+        color: #fff;
+        background-color: var(--chrono-blue);
+        border-color: var(--chrono-orange);
+      }
+      .expedie:hover {
+        color: var(--chrono-blue);
+        background-color: #fff;
+        border-color: var(--chrono-red);
+      }
+      body {
         font-size: 1.2rem;
-        opacity: 0.9;
-      }
-
-      .testimonial-card {
-        background: rgba(255, 255, 255, 0.05);
-        border-radius: 15px;
-        padding: 30px;
-        margin-bottom: 30px;
-        border: 1px solid rgba(0, 204, 255, 0.1);
-      }
-
-      .testimonial-text {
-        font-style: italic;
-        margin-bottom: 20px;
-      }
-
-      .client-name {
-        font-weight: 600;
-        color: var(--secondary-color);
-      }
-
-      .client-position {
-        font-size: 0.9rem;
-        opacity: 0.7;
-      }
-
-      .contact-form {
-        background: rgba(255, 255, 255, 0.05);
-        border-radius: 15px;
-        padding: 40px;
-        border: 1px solid rgba(0, 204, 255, 0.1);
-      }
-
-      .form-control {
-        background: rgba(255, 255, 255, 0.05);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        color: var(--light-color);
-        border-radius: 10px;
-        padding: 12px 20px;
-        margin-bottom: 20px;
-      }
-
-      .form-control:focus {
-        background: rgba(255, 255, 255, 0.1);
-        border: 1px solid var(--secondary-color);
-        color: var(--light-color);
-        box-shadow: 0 0 0 0.25rem rgba(0, 204, 255, 0.25);
-      }
-
-      footer {
-        background: linear-gradient(135deg, #0a0a1a 0%, var(--dark-color) 100%);
-        padding: 60px 0 20px;
-        border-top: 1px solid rgba(0, 204, 255, 0.1);
-      }
-
-      .footer-logo {
-        font-family: "Orbitron", sans-serif;
-        font-weight: 700;
-        font-size: 1.8rem;
-        color: var(--secondary-color);
-        margin-bottom: 20px;
-        display: inline-block;
-      }
-
-      .footer-links h5 {
-        font-family: "Orbitron", sans-serif;
-        font-size: 1.2rem;
-        margin-bottom: 20px;
-        color: var(--secondary-color);
-      }
-
-      .footer-links ul {
-        list-style: none;
-        padding: 0;
-      }
-
-      .footer-links li {
-        margin-bottom: 10px;
-      }
-
-      .footer-links a {
-        color: var(--light-color);
-        text-decoration: none;
-        transition: all 0.3s;
-      }
-
-      .footer-links a:hover {
-        color: var(--secondary-color);
-        padding-left: 5px;
-      }
-
-      .social-icons a {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        width: 40px;
-        height: 40px;
-        background: rgba(255, 255, 255, 0.05);
-        border-radius: 50%;
-        margin-right: 10px;
-        color: var(--light-color);
-        transition: all 0.3s;
-      }
-
-      .social-icons a:hover {
-        background: var(--secondary-color);
-        color: var(--dark-color);
-        transform: translateY(-3px);
-      }
-
-      .copyright {
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-        padding-top: 20px;
-        margin-top: 40px;
-        opacity: 0.7;
-      }
-
-      /* Animation */
-      @keyframes float {
-        0% {
-          transform: translateY(0px);
-        }
-        50% {
-          transform: translateY(-15px);
-        }
-        100% {
-          transform: translateY(0px);
-        }
-      }
-
-      .floating {
-        animation: float 6s ease-in-out infinite;
-      }
-
-      /* Responsive adjustments */
-      @media (max-width: 768px) {
-        .hero-title {
-          font-size: 2.5rem;
-        }
-
-        .hero-subtitle {
-          font-size: 1.2rem;
-        }
-
-        .section-title {
-          font-size: 2rem;
-        }
       }
     </style>
   </head>
   <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-      <div class="container">
-        <a class="navbar-brand" href="#">
-          <i class="fas fa-rocket me-2"></i>Livraison
-        </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
+    <!-- Navbar -->
+    <nav
+      class="navbar"
+      style="
+        border-bottom: 5px solid;
+        border-image: linear-gradient(
+            to right,
+            #ffffff 0%,
+            #ffffff 30%,
+            #0c5b89 30%,
+            #0c5b89 70%,
+            #f48005 70%,
+            #f48005 100%
+          )
+          1;
+      "
+    >
+      <a href="#" class="logo">
+        <img
+          src="../logo160.png"
+          alt="LagoExpress"
+          style="height: 100%; max-height: 75px"
+        />
+      </a>
+      <div class="nav-container">
+        <button class="mobile-toggle" id="mobileToggle">
+          <i class="fas fa-bars"></i>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link active" href="#home">Accueil</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#services">Services</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#about">À propos</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#pricing">Tarifs</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#contact">Contact</a>
-            </li>
-            <li class="nav-item ms-lg-3">
-              <a class="btn btn-outline-light rounded-pill" href="#tracking"
-                ><i class="fas fa-search-location me-2"></i>Suivi de colis</a
-              >
-            </li>
-          </ul>
-        </div>
+
+        <ul class="nav-menu" id="navMenu">
+          <li class="nav-item">
+            <a href="#" class="nav-link">Accueil</a>
+          </li>
+          <li class="nav-item">
+            <a href="#about" class="nav-link">À propos</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a
+              class="dropdown-toggle nav-link"
+              href="#"
+              id="servicesDropdown"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Nos Offres
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="servicesDropdown">
+              <li>
+                <a class="dropdown-item nav-link text-center" href="#"
+                  >Particuliers</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item nav-link text-center" href="#"
+                  >Professionnels</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li class="nav-item">
+            <a href="#contact" class="nav-link">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a href="#tracking" class="nav-link">Suivie</a>
+          </li>
+          <li class="nav-item">
+            <button class="nav-btn">Commander Maintenant</button>
+          </li>
+        </ul>
       </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero-section">
-      <div class="container hero-content">
-        <div class="row align-items-center">
-          <div class="col-lg-6">
-            <h1 class="hero-title">Livraison Rapide Sans Frontières</h1>
-            <p class="hero-subtitle">
-              Notre technologie de pointe vous garantit des livraisons
-              ultra-rapides et sécurisées partout dans le monde.
-            </p>
-            <div class="d-flex flex-wrap gap-3">
-              <a href="#services" class="btn btn-primary btn-lg"
-                ><i class="fas fa-paper-plane me-2"></i>Découvrir</a
-              >
-              <a href="#contact" class="btn btn-outline-light btn-lg"
-                ><i class="fas fa-headset me-2"></i>Nous contacter</a
-              >
-            </div>
-          </div>
-          <div class="col-lg-6 d-none d-lg-block">
+    <div class="overlay" id="overlay"></div>
+    <!-- section hero -->
+    <section id="hero" class="hero section" style="margin-top: 50px">
+      <div class="container">
+        <div class="row gy-4">
+          <div
+            class="col-lg-6 order-lg-last hero-img"
+            data-aos="zoom-out"
+            data-aos-delay="100"
+          >
             <img
               src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
-              alt="Livraison internationale"
-              class="img-fluid rounded-4 floating"
-              style="box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3)"
+              class="img-fluid animated rounded"
+              alt=""
             />
+          </div>
+          <div
+            class="col-lg-6 d-flex flex-column justify-content-center text-center text-md-start"
+            data-aos="fade-in"
+          >
+            <h1 class="section-title">
+              Livraison Rapide et Fiable Partout dans le Monde
+            </h1>
+            <p>
+              Expédiez vos colis en toute confiance avec nos services de
+              livraison express. Suivez en temps réel et profitez de nos
+              solutions logistiques fiables.
+            </p>
+            <div
+              class="d-flex mt-4 justify-content-center justify-content-md-start"
+            >
+              <button class="btn btn-lg me-3 expedie">Expedié un Colis</button>
+              <button class="btn btn-lg suivre">Suivre un Colis</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- section suivie -->
+    <section class="hero-section" style="margin-top: 100px">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="bg-white p-4 rounded shadow">
+              <ul class="nav nav-tabs" id="myTab" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <button
+                    class="nav-link active"
+                    id="suivre-tab"
+                    data-bs-toggle="tab"
+                    data-bs-target="#suivre"
+                    type="button"
+                  >
+                    Suivre un colis
+                  </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button
+                    class="nav-link"
+                    id="envoyer-tab"
+                    data-bs-toggle="tab"
+                    data-bs-target="#envoyer"
+                    type="button"
+                  >
+                    Envoyer un colis
+                  </button>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button
+                    class="nav-link"
+                    id="relais-tab"
+                    data-bs-toggle="tab"
+                    data-bs-target="#relais"
+                    type="button"
+                  >
+                    Trouver un point Relais
+                  </button>
+                </li>
+              </ul>
+              <div class="tab-content p-3" id="myTabContent">
+                <div
+                  class="tab-pane fade show active"
+                  id="suivre"
+                  role="tabpanel"
+                >
+                  <form class="row g-2 align-items-center">
+                    <div class="col-md-9">
+                      <input
+                        type="text"
+                        class="form-control tracking-input"
+                        placeholder="N° de suivi (ex : XX123456789XX)"
+                      />
+                    </div>
+                    <div class="col-md-3">
+                      <button
+                        type="submit"
+                        class="btn btn-chrono-orange w-100 py-2"
+                      >
+                        Suivre
+                      </button>
+                    </div>
+                    <div class="col-12 mt-2">
+                      <a href="#" class="small text-chrono-blue"
+                        ><i class="fas fa-info-circle"></i> Où trouver mon
+                        numéro de suivi ?</a
+                      >
+                    </div>
+                  </form>
+                </div>
+                <div class="tab-pane fade" id="envoyer" role="tabpanel">
+                  <form class="row g-2">
+                    <div class="col-md-4">
+                      <select class="form-select">
+                        <option>Pays de départ</option>
+                        <option>France</option>
+                      </select>
+                    </div>
+                    <div class="col-md-4">
+                      <select class="form-select">
+                        <option>Pays de destination</option>
+                        <option>France</option>
+                        <option>International</option>
+                      </select>
+                    </div>
+                    <div class="col-md-4">
+                      <button
+                        type="submit"
+                        class="btn btn-chrono-orange w-100 py-2"
+                      >
+                        Envoyer
+                      </button>
+                    </div>
+                  </form>
+                </div>
+                <div class="tab-pane fade" id="relais" role="tabpanel">
+                  <form class="row g-2">
+                    <div class="col-md-9">
+                      <input
+                        type="text"
+                        class="form-control tracking-input"
+                        placeholder="Code postal ou ville"
+                      />
+                    </div>
+                    <div class="col-md-3">
+                      <button
+                        type="submit"
+                        class="btn btn-chrono-orange w-100 py-2"
+                      >
+                        Rechercher
+                      </button>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- questions -->
+    <section class="py-5">
+      <div class="container">
+        <div class="text-center">
+          <h2 class="d-inline-block section-title">Questions fréquentes</h2>
+        </div>
+        <div class="accordion" id="faqAccordion">
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="headingOne">
+              <button
+                class="accordion-button"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseOne"
+              >
+                Comment suivre mon colis Chronopost ?
+              </button>
+            </h3>
+            <div
+              id="collapseOne"
+              class="accordion-collapse collapse show"
+              data-bs-parent="#faqAccordion"
+            >
+              <div class="accordion-body">
+                Vous pouvez suivre votre colis en saisissant votre numéro de
+                suivi (13 caractères) dans le champ dédié en haut de notre site
+                internet.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="headingTwo">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseTwo"
+              >
+                Quels sont les délais de livraison ?
+              </button>
+            </h3>
+            <div
+              id="collapseTwo"
+              class="accordion-collapse collapse"
+              data-bs-parent="#faqAccordion"
+            >
+              <div class="accordion-body">
+                Les délais dépendent de la solution choisie et de la
+                destination. En France métropolitaine, nous proposons une
+                livraison avant 13h ou avant 18h le lendemain.
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h3 class="accordion-header" id="headingThree">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#collapseThree"
+              >
+                Où puis-je déposer mon colis ?
+              </button>
+            </h3>
+            <div
+              id="collapseThree"
+              class="accordion-collapse collapse"
+              data-bs-parent="#faqAccordion"
+            >
+              <div class="accordion-body">
+                Vous pouvez déposer votre colis dans l'un de nos 18 000 points
+                Relais® ou dans une agence Chronopost. Utilisez notre
+                localisateur pour trouver le point le plus proche de chez vous.
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Features Section -->
-    <section class="py-5">
+    <section class="py-5 bg-light">
       <div class="container py-5">
+        <div class="text-center mb-5">
+          <h2 class="section-title d-inline-block">
+            Pourquoi choisir ChronoExpress ?
+          </h2>
+        </div>
         <div class="row g-4">
-          <div class="col-md-4">
-            <div class="feature-card">
-              <div class="feature-icon">
-                <i class="fas fa-globe"></i>
-              </div>
-              <h3>Couverture Mondiale</h3>
-              <p>
-                Notre réseau s'étend à plus de pays avec des partenaires locaux
-                pour une livraison optimale.
-              </p>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="feature-card">
-              <div class="feature-icon">
-                <i class="fas fa-bolt"></i>
-              </div>
-              <h3>Vitesse Supersonique</h3>
-              <p>
-                Technologie de livraison exclusive réduisant les délais jusqu'à
-                70% par rapport à la concurrence.
-              </p>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="feature-card">
+          <div class="col-md-6">
+            <div class="d-flex">
               <div class="feature-icon">
                 <i class="fas fa-shield-alt"></i>
               </div>
-              <h3>Sécurité Quantique</h3>
-              <p>
-                Système de suivi et protection de colis utilisant la blockchain
-                pour une traçabilité totale.
-              </p>
+              <div>
+                <h4>Sécurité maximale</h4>
+                <p>
+                  Nos colis sont suivis et protégés à chaque étape de leur
+                  parcours avec des systèmes de sécurité avancés.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="d-flex">
+              <div class="feature-icon">
+                <i class="fas fa-headset"></i>
+              </div>
+              <div>
+                <h4>Support 24/7</h4>
+                <p>
+                  Notre équipe est disponible 24h/24 et 7j/7 pour répondre à
+                  toutes vos questions et résoudre vos problèmes.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="d-flex">
+              <div class="feature-icon">
+                <i class="fas fa-map-marked-alt"></i>
+              </div>
+              <div>
+                <h4>Suivi en temps réel</h4>
+                <p>
+                  Visualisez la position exacte de votre colis à tout moment
+                  grâce à notre système de suivi ultra-précis.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="d-flex">
+              <div class="feature-icon">
+                <i class="fas fa-euro-sign"></i>
+              </div>
+              <div>
+                <h4>Tarifs compétitifs</h4>
+                <p>
+                  Bénéficiez de tarifs avantageux grâce à notre réseau optimisé
+                  et nos partenariats stratégiques.
+                </p>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" class="py-5 bg-dark">
-      <div class="container py-5">
-        <div class="text-center mb-5">
-          <h2 class="section-title">Nos Services Premium</h2>
-          <p class="lead">
-            Des solutions sur mesure pour répondre à tous vos besoins
-            logistiques
-          </p>
-        </div>
-        <div class="row g-4">
-          <div class="col-lg-4 col-md-6">
-            <div class="service-card">
-              <div class="service-icon">
-                <i class="fas fa-shipping-fast"></i>
-              </div>
-              <h3>Express International</h3>
-              <p>
-                Livraison en 24-48h vers les principales villes d'abidjan et
-                Paris avec suivi en temps réel incluse.
-              </p>
-              <a href="#" class="btn btn-sm btn-outline-light mt-3"
-                >En savoir plus</a
-              >
-            </div>
-          </div>
-          <!-- <div class="col-lg-4 col-md-6">
-                    <div class="service-card">
-                        <div class="service-icon">
-                            <i class="fas fa-temperature-low"></i>
-                        </div>
-                        <h3>Chaine du Froid</h3>
-                        <p>Solution spécialisée pour les produits sensibles avec maintien de température contrôlé tout au long du trajet.</p>
-                        <a href="#" class="btn btn-sm btn-outline-light mt-3">En savoir plus</a>
-                    </div>
-                </div> -->
-          <div class="col-lg-4 col-md-6">
-            <div class="service-card">
-              <div class="service-icon">
-                <i class="fas fa-lock"></i>
-              </div>
-              <h3>Transport de Valeurs</h3>
-              <p>
-                Service hautement sécurisé pour objets précieux avec véhicules
-                blindés et agents spécialisés.
-              </p>
-              <a href="#" class="btn btn-sm btn-outline-light mt-3"
-                >En savoir plus</a
-              >
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="service-card">
-              <div class="service-icon">
-                <i class="fas fa-warehouse"></i>
-              </div>
-              <h3>Stockage Intelligent</h3>
-              <p>
-                Solutions d'entreposage automatisées avec gestion intelligente
-                des stocks et préparation des commandes.
-              </p>
-              <a href="#" class="btn btn-sm btn-outline-light mt-3"
-                >En savoir plus</a
-              >
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="service-card">
-              <div class="service-icon">
-                <i class="fas fa-robot"></i>
-              </div>
-              <h3>Livraison Autonome</h3>
-              <p>
-                Flotte de drones et robots terrestres pour des livraisons
-                ultra-rapides en milieu urbain.
-              </p>
-              <a href="#" class="btn btn-sm btn-outline-light mt-3"
-                >En savoir plus</a
-              >
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6">
-            <div class="service-card">
-              <div class="service-icon">
-                <i class="fas fa-boxes"></i>
-              </div>
-              <h3>Solutions E-commerce</h3>
-              <p>
-                Intégration complète avec les principales plateformes pour une
-                logistique e-commerce optimisée.
-              </p>
-              <a href="#" class="btn btn-sm btn-outline-light mt-3"
-                >En savoir plus</a
-              >
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Stats Section -->
-    <section class="stats-section">
-      <div class="container">
-        <div class="row text-center">
-          <div class="col-md-3 col-6">
-            <div class="stat-item">
-              <div class="stat-number">+05</div>
-              <div class="stat-label">Pays Desservis</div>
-            </div>
-          </div>
-          <div class="col-md-3 col-6">
-            <div class="stat-item">
-              <div class="stat-number">24h</div>
-              <div class="stat-label">Délai Record</div>
-            </div>
-          </div>
-          <div class="col-md-3 col-6">
-            <div class="stat-item">
-              <div class="stat-number">99.9%</div>
-              <div class="stat-label">Taux de Réussite</div>
-            </div>
-          </div>
-          <div class="col-md-3 col-6">
-            <div class="stat-item">
-              <div class="stat-number">10M+</div>
-              <div class="stat-label">Colis Livrés</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- About Section -->
     <section id="about" class="py-5">
       <div class="container py-5">
         <div class="row align-items-center">
           <div class="col-lg-6 mb-5 mb-lg-0">
-            <h2 class="section-title">Notre Vision</h2>
+            <h2 class="section-title">Notre Entreprise</h2>
             <p class="lead">
-              Révolutionner la logistique mondiale avec des technologies de
-              pointe.
+              Leader de la livraison express en Côte d'Ivoire depuis 2025
             </p>
             <p>
-              Fondée en 2025, Livraison a rapidement émergé comme leader dans le
-              secteur de la livraison express internationale grâce à notre
-              approche innovante et notre engagement envers l'excellence.
+              Fondée à Abidjan, LagoExpress s'est rapidement imposée comme un
+              acteur majeur du transport express grâce à notre réseau performant
+              et notre engagement envers la qualité de service.
             </p>
             <p>
-              Notre plateforme intelligente utilise l'IA pour optimiser chaque
-              étape du processus logistique, réduisant les délais et les coûts
-              tout en améliorant la fiabilité.
+              Notre équipe de professionnels travaille sans relâche pour offrir
+              à nos clients des solutions logistiques innovantes, rapides et
+              fiables.
             </p>
             <div class="mt-4">
               <a href="#" class="btn btn-primary me-3">Notre histoire</a>
-              <a href="#" class="btn btn-outline-light">Notre technologie</a>
+              <a href="#" class="btn btn-outline-primary">Nos engagements</a>
             </div>
           </div>
           <div class="col-lg-6">
-            <div class="position-relative">
-              <img
-                src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
-                alt="Entrepôt automatisé"
-                class="img-fluid rounded-4"
-              />
-              <div
-                class="position-absolute bottom-0 start-0 bg-primary p-3 rounded-end"
-                style="transform: translateY(50%)"
-              >
-                <h4 class="mb-0">+300%</h4>
-                <small>Croissance annuelle</small>
-              </div>
-            </div>
+            <img
+              src="https://images.unsplash.com/photo-1603133872878-684f208fb84b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+              alt="Entrepôt LagoExpress"
+              class="img-fluid rounded shadow"
+            />
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <!-- <section class="py-5 bg-dark">
-        <div class="container py-5">
-            <div class="text-center mb-5">
-                <h2 class="section-title">Ils nous font confiance</h2>
-                <p class="lead">Des entreprises de premier plan comptent sur notre expertise</p>
-            </div>
-            <div class="row">
-                <div class="col-lg-4">
-                    <div class="testimonial-card">
-                        <div class="mb-4">
-                            <i class="fas fa-quote-left text-secondary fs-1"></i>
-                        </div>
-                        <p class="testimonial-text">"Livraison a transformé notre chaîne d'approvisionnement internationale. Leurs solutions sur mesure nous ont permis de réduire nos délais de livraison de 40%."</p>
-                        <div class="d-flex align-items-center">
-                            <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Client" class="rounded-circle me-3" width="50">
-                            <div>
-                                <h6 class="client-name mb-0">kader Laurent</h6>
-                                <small class="client-position">Directrice Logistique, TechGlobal</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="testimonial-card">
-                        <div class="mb-4">
-                            <i class="fas fa-quote-left text-secondary fs-1"></i>
-                        </div>
-                        <p class="testimonial-text">"Leur système de suivi en temps réel est exceptionnel. Nous avons enfin une visibilité totale sur nos envois internationaux, ce qui change tout pour notre relation client."</p>
-                        <div class="d-flex align-items-center">
-                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Client" class="rounded-circle me-3" width="50">
-                            <div>
-                                <h6 class="client-name mb-0">Marc Dubois</h6>
-                                <small class="client-position">PDG, LuxeExport</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="testimonial-card">
-                        <div class="mb-4">
-                            <i class="fas fa-quote-left text-secondary fs-1"></i>
-                        </div>
-                        <p class="testimonial-text">"Leur équipe a résolu des problèmes logistiques que nous considérions comme insolubles. Une véritable extension de notre entreprise, pas juste un prestataire."</p>
-                        <div class="d-flex align-items-center">
-                            <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Client" class="rounded-circle me-3" width="50">
-                            <div>
-                                <h6 class="client-name mb-0">Élodie Martin</h6>
-                                <small class="client-position">Directrice des Opérations, BioPharma</small>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section> -->
-
-    <!-- Pricing Section -->
-    <section id="pricing" class="py-5">
-      <div class="container py-5">
-        <div class="text-center mb-5">
-          <h2 class="section-title">Solutions Adaptées</h2>
-          <p class="lead">
-            Des tarifs compétitifs pour tous vos besoins en livraison
-          </p>
-        </div>
-        <div class="row g-4">
-          <div class="col-lg-4">
-            <div class="service-card">
-              <h3 class="text-center">Standard</h3>
-              <div class="text-center my-4">
-                <span class="h1">En fonction du poids du Colis</span>
-                <span class="text-muted">/colis</span>
-              </div>
-              <ul class="list-unstyled">
-                <li class="mb-2">
-                  <i class="fas fa-check text-primary me-2"></i> Livraison en
-                  3-5 jours ouvrables
-                </li>
-                <li class="mb-2">
-                  <i class="fas fa-check text-primary me-2"></i> Suivi basique
-                </li>
-                <!-- <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Assurance jusqu'à €100</li> -->
-                <li class="mb-2">
-                  <i class="fas fa-check text-primary me-2"></i> +05 pays
-                </li>
-                <li class="mb-2">
-                  <i class="fas fa-times text-secondary me-2"></i> Pas de
-                  livraison express
-                </li>
-              </ul>
-              <div class="text-center mt-4">
-                <a href="#" class="btn btn-primary">Choisir</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <div
-              class="service-card"
-              style="border: 2px solid var(--secondary-color)"
-            >
-              <div class="text-center">
-                <span class="badge bg-primary mb-3">Populaire</span>
-              </div>
-              <h3 class="text-center">Express</h3>
-              <div class="text-center my-4">
-                <span class="h1">A patir de 1000Fcfa </span>
-                <span class="text-muted">/colis</span>
-              </div>
-              <ul class="list-unstyled">
-                <li class="mb-2">
-                  <i class="fas fa-check text-primary me-2"></i> Livraison en
-                  1-2 jours ouvrables
-                </li>
-                <li class="mb-2">
-                  <i class="fas fa-check text-primary me-2"></i> Suivi premium
-                  en temps réel
-                </li>
-                <!-- <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Assurance jusqu'à €500</li> -->
-                <li class="mb-2">
-                  <i class="fas fa-check text-primary me-2"></i> Abidjan
-                </li>
-                <li class="mb-2">
-                  <i class="fas fa-check text-primary me-2"></i> Support
-                  prioritaire
-                </li>
-              </ul>
-              <div class="text-center mt-4">
-                <a href="#" class="btn btn-primary">Choisir</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="service-card">
-              <h3 class="text-center">Entreprise</h3>
-              <div class="text-center my-4">
-                <span class="h1">Sur mesure</span>
-              </div>
-              <ul class="list-unstyled">
-                <li class="mb-2">
-                  <i class="fas fa-check text-primary me-2"></i> Solutions
-                  logistiques complètes
-                </li>
-                <li class="mb-2">
-                  <i class="fas fa-check text-primary me-2"></i> Tarifs volume
-                  avantageux
-                </li>
-                <!-- <li class="mb-2"><i class="fas fa-check text-primary me-2"></i> Intégration API</li> -->
-                <li class="mb-2">
-                  <i class="fas fa-check text-primary me-2"></i> Gestion dédiée
-                  de compte
-                </li>
-                <li class="mb-2">
-                  <i class="fas fa-check text-primary me-2"></i> Rapports
-                  analytiques avancés
-                </li>
-              </ul>
-              <div class="text-center mt-4">
-                <a href="#" class="btn btn-primary">Nous contacter</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Tracking Section -->
-    <section id="tracking" class="py-5 bg-dark">
-      <div class="container py-5">
-        <div class="row justify-content-center">
-          <div class="col-lg-8">
-            <div class="text-center mb-5">
-              <h2 class="section-title">Suivi de Colis</h2>
-              <p class="lead">
-                Entrez votre numéro de suivi pour connaître la position exacte
-                de votre colis
-              </p>
-            </div>
-            <div class="bg-dark rounded-3 p-4 shadow">
-              <form>
-                <div class="input-group mb-3">
-                  <input
-                    type="text"
-                    class="form-control form-control-lg"
-                    aria-label="Numéro de suivi"
-                  />
-                  <button
-                    class="btn btn-primary"
-                    type="button"
-                    id="button-addon2"
-                  >
-                    <i class="fas fa-search me-2"></i>Suivre
-                  </button>
-                </div>
-              </form>
-              <!-- <div class="text-center mt-3">
-                <a href="#" class="text-secondary"
-                  ><i class="fas fa-question-circle me-2"></i>Où trouver mon
-                  numéro de suivi ?</a
-                >
-              </div> -->
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="py-5">
-      <div class="container py-5">
+    <!-- footer -->
+    <footer
+      class="text-white pt-5 pb-3"
+      style="background-color: var(--chrono-blue)"
+    >
+      <div class="container">
         <div class="row">
-          <div class="col-lg-6 mb-5 mb-lg-0">
-            <h2 class="section-title">Prêt à transformer votre logistique ?</h2>
-            <p class="lead">
-              Notre équipe est disponible 24/7 pour répondre à vos questions et
-              vous proposer la solution parfaite.
-            </p>
-            <div class="mt-5">
-              <div class="d-flex align-items-center mb-4">
-                <div class="bg-primary p-3 rounded-circle me-4">
-                  <i class="fas fa-phone-alt fs-4"></i>
-                </div>
-                <div>
-                  <h5 class="mb-0">Support téléphonique</h5>
-                  <p class="mb-0">+225 00 00 00 00 00</p>
-                </div>
-              </div>
-              <div class="d-flex align-items-center mb-4">
-                <div class="bg-primary p-3 rounded-circle me-4">
-                  <i class="fas fa-envelope fs-4"></i>
-                </div>
-                <div>
-                  <h5 class="mb-0">Email</h5>
-                  <p class="mb-0">contact@livraison.com</p>
-                </div>
-              </div>
-              <div class="d-flex align-items-center">
-                <div class="bg-primary p-3 rounded-circle me-4">
-                  <i class="fas fa-map-marker-alt fs-4"></i>
-                </div>
-                <div>
-                  <h5 class="mb-0">Siège social</h5>
-                  <p class="mb-0">Abidjan, Côte d'Ivoire</p>
-                </div>
-              </div>
-            </div>
+          <div class="col-md-3 mb-4">
+            <h4 class="text-center text-decoration-underline">LagoExpress</h4>
+            <ul class="list-unstyled">
+              <li>
+                <a href="#" class="text-footer"
+                  ><i class="fas fa-chevron-right me-2"></i>Qui sommes-nous ?</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-footer"
+                  ><i class="fas fa-chevron-right me-2"></i>Rejoignez-nous</a
+                >
+              </li>
+              <!-- <li><a href="#" class="text-white-50">Espace presse</a></li> -->
+            </ul>
           </div>
-          <div class="col-lg-6">
-            <div class="contact-form">
-              <h3 class="mb-4">Envoyez-nous un message</h3>
-              <form>
-                <div class="row">
-                  <div class="col-md-6">
-                    <input
-                      type="text"
-                      class="form-control"
-                      placeholder="Votre nom"
-                    />
-                  </div>
-                  <div class="col-md-6">
-                    <input
-                      type="email"
-                      class="form-control"
-                      placeholder="Votre email"
-                    />
-                  </div>
-                </div>
-                <input type="text" class="form-control" placeholder="Sujet" />
-                <textarea
-                  class="form-control"
-                  rows="5"
-                  placeholder="Votre message"
-                ></textarea>
-                <button type="submit" class="btn btn-primary w-100">
-                  Envoyer le message
-                </button>
-              </form>
+          <div class="col-md-3 mb-4">
+            <h4 class="text-center text-decoration-underline">Nos Offres</h4>
+            <ul class="list-unstyled">
+              <li>
+                <a href="#" class="text-footer"
+                  ><i class="fas fa-chevron-right me-2"></i>Particuliers</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-footer"
+                  ><i class="fas fa-chevron-right me-2"></i>Professionnels</a
+                >
+              </li>
+              <!-- <li><a href="#" class="text-white-50">E-commerce</a></li> -->
+            </ul>
+          </div>
+          <div class="col-md-3 mb-4">
+            <h4 class="text-center text-decoration-underline">Aide</h4>
+            <ul class="list-unstyled">
+              <!-- <li><a href="#" class="text-white-50">Centre d'aide</a></li> -->
+              <li>
+                <a href="#" class="text-footer"
+                  ><i class="fas fa-chevron-right me-2"></i>Nous contacter</a
+                >
+              </li>
+              <li>
+                <a href="#" class="text-footer"
+                  ><i class="fas fa-chevron-right me-2"></i>FAQ</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-3 mb-4">
+            <h4 class="text-decoration-underline text-sm-center">
+              Réseaux sociaux
+            </h4>
+            <div class="d-flex gap-3">
+              <a href="#" class="text-white"
+                ><i class="fab fa-facebook-f"></i
+              ></a>
+              <a href="#" class="text-white"><i class="fab fa-twitter"></i></a>
+              <a href="#" class="text-white"
+                ><i class="fab fa-linkedin-in"></i
+              ></a>
+              <a href="#" class="text-white"
+                ><i class="fab fa-instagram"></i
+              ></a>
             </div>
           </div>
         </div>
+        <hr />
+        <div class="row">
+          <div class="col-md-6">
+            <p class="small text-white-50">
+              © 2025 LagoExpress - Tous droits réservés
+            </p>
+          </div>
+          <div class="col-md-6 text-md-end">
+            <a href="#" class="text-white-50 small me-3"
+              >Conçu par GDY GROUP & O'DEV</a
+            >
+          </div>
+        </div>
       </div>
-    </section>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      // Elements
+      const mobileToggle = document.getElementById("mobileToggle");
+      const navMenu = document.getElementById("navMenu");
+      const overlay = document.getElementById("overlay");
+
+      // Toggle menu mobile
+      mobileToggle.addEventListener("click", () => {
+        navMenu.classList.toggle("active");
+        overlay.classList.toggle("active");
+
+        // Changement d'icône
+        if (navMenu.classList.contains("active")) {
+          mobileToggle.innerHTML = '<i class="fas fa-times"></i>';
+        } else {
+          mobileToggle.innerHTML = '<i class="fas fa-bars"></i>';
+        }
+      });
+
+      // Fermer le menu quand on clique sur l'overlay
+      overlay.addEventListener("click", () => {
+        navMenu.classList.remove("active");
+        overlay.classList.remove("active");
+        mobileToggle.innerHTML = '<i class="fas fa-bars"></i>';
+      });
+
+      // Fermer le menu quand on clique sur un lien (mobile)
+      const navLinks = document.querySelectorAll(".nav-link, .nav-btn");
+      navLinks.forEach((link) => {
+        link.addEventListener("click", () => {
+          if (window.innerWidth <= 992) {
+            navMenu.classList.remove("active");
+            overlay.classList.remove("active");
+            mobileToggle.innerHTML = '<i class="fas fa-bars"></i>';
+          }
+        });
+      });
+
+      // Effet au scroll
+      window.addEventListener("scroll", () => {
+        const navbar = document.querySelector(".navbar");
+        if (window.scrollY > 50) {
+          navbar.style.height = "70px";
+          navbar.style.boxShadow = "0 2px 20px rgba(0, 0, 0, 0.15)";
+        } else {
+          navbar.style.height = "80px";
+          navbar.style.boxShadow = "0 2px 15px rgba(0, 0, 0, 0.1)";
+        }
+      });
+    </script>
   </body>
 </html>
